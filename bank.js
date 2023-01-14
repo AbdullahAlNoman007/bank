@@ -42,7 +42,7 @@
 
     if (parseFloat(newwithdrawamount)> parseFloat(oldbalanceamount)){
 
-        alert("Bank ato tk nai")
+        alert("Bank a ato tk nai")
         withdraw.value=''
         return
     }
