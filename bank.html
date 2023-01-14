@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> New </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://web.programming-hero.com/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/17d8d64bfe.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+   <section class="bg-emerald-100 w-9/12 mx-auto pl-10 pr-4 py-8 mt-10 rounded-md">
+    <div>
+        <h1 class="text-center text-5xl font-normal my-12 text-cyan-500">Let's get some <span class="font-semibold text-cyan-600">Money</span> !!!</h1>
+    </div>
+    <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-3">
+        <div class="bg-green-300 text-white w-11/12 pl-5  py-12 text-3xl rounded-xl">
+            <h1>Deposite</h1>
+            <p>$<span id="deposite-wallet">00</span></p>
+        </div>
+        <div class="bg-pink-300 text-white w-11/12 pl-5 py-12 text-3xl rounded-xl">
+            <h1>Withdraw</h1>
+            <p >$<span id="withdraw-wallet">00</span></p>
+        </div>
+        <div class="bg-red-300 text-white w-11/12 pl-5 py-12 text-3xl rounded-xl">
+            <h1>Balance</h1>
+            <p >$<span id="balance">1235</span></p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2  mt-16">
+        <div class="bg-blue-300  text-white w-11/12 pl-5 py-12  rounded-xl">
+            <h1 class="text-3xl font-semibold">Please Deposite</h1>
+            <input type="text" placeholder="Enter the amount you want to deposite" class="mt-3 rounded-md w-3/4 py-2 pl-1 text-lg  text-gray-500" id="deposite">
+            <button id="depo" class="rounded-lg text-white bg-blue-700 px-4 py-2 hover:bg-blue-500 block mt-3">Deposite</button>
+
+        </div>
+        <div class="bg-blue-300  text-white w-11/12 pl-5 py-12  rounded-xl">
+            <h1 class="text-3xl font-semibold">Please Withdraw</h1>
+            <input type="text" placeholder="Enter the amount you want to Withdraw" class="mt-3 rounded-md w-3/4 py-2 pl-1 text-lg text-gray-500" id="withdraw">
+            <button id="with" class="rounded-lg text-white bg-blue-700 px-4 py-2 hover:bg-blue-500 block mt-3">Withdraw</button>
+
+        </div>
+    </div>
+   </section>
+    
+  </body>
+
+  <script src="bank.js"></script>
+</html>
