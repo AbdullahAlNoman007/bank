@@ -1,56 +1,60 @@
- document.getElementById('depo').addEventListener('click',function(){
+function gettextbyid(idname){
 
-    const deposite = document.getElementById('deposite')
-    const newdepositeamount = deposite.value
+    const textfield = document.getElementById(idname);
+    const oldtextvalue = parseFloat(textfield.innerText)
+    return oldtextvalue
+  }
+function getvaluebyid(valuebtn){
+    const valuefield =document.getElementById(valuebtn)
+    const newidvalue =parseFloat(valuefield.value)
+    valuefield.value =''
+    return newidvalue
+    
+}
 
-    if(parseFloat(newdepositeamount ) ==0){
+function setvalue(id,newvalue){
 
-        alert('Enter some amount')
-        deposite.value =''
+    const textid = document.getElementById(id)
+    textid.innerText =newvalue
+}
+
+
+document.getElementById('depo').addEventListener("click",function(){
+
+    const text = gettextbyid("deposit-wallet")
+    const value = getvaluebyid("deposit")
+    const balance = gettextbyid("balance")
+    if(value === 0){
+        alert("Enter Some Value")
         return
     }
+    const newvalue = text + value
+    const newbalance =balance + value
+    setvalue("deposit-wallet",newvalue)
+    setvalue("balance",newbalance)
 
-    
+})
+document.getElementById('with').addEventListener("click",function(){
 
-    const depositewallet = document.getElementById("deposite-wallet")
-    const olddepositeamount = depositewallet.innerText
+    const text = gettextbyid("withdraw-wallet")
+    const value = getvaluebyid("withdraw")
+    const balance = gettextbyid("balance")
+   
+    if(value> balance){
 
-    const currentdeposite = parseInt(olddepositeamount) + parseInt(newdepositeamount)
-
-    depositewallet.innerText =currentdeposite
-    deposite.value=''
-
-    const balance =document.getElementById('balance')
-    const oldbalanceamount = balance.innerText
-
-    const currentbalance = parseFloat(oldbalanceamount) + parseFloat (newdepositeamount)
-    
-    balance.innerText =currentbalance
- })
- document.getElementById('with').addEventListener('click',function(){
-
-    const withdraw = document.getElementById('withdraw')
-    const newwithdrawamount = withdraw.value
-
-    const withdrawwallet = document.getElementById("withdraw-wallet")
-    const oldwithdrawamount = withdrawwallet.innerText
-
-    const currenwithdraw = parseInt(oldwithdrawamount) + parseInt(newwithdrawamount)
-
-    const balance =document.getElementById('balance')
-    const oldbalanceamount = balance.innerText
-
-    if (parseFloat(newwithdrawamount)> parseFloat(oldbalanceamount)){
-
-        alert("Bank a ato tk nai")
-        withdraw.value=''
+        alert("You don't have sufficient balance")
         return
     }
-    withdrawwallet.innerText =currenwithdraw
-    withdraw.value=''
-    
+    else if(value === 0){
+        alert("Enter Some Value")
+        return
+    }
+    const newvalue = text + value
+    const newbalance =balance - value
 
-    const currentbalance = parseFloat(oldbalanceamount) - parseFloat (newwithdrawamount)
+    setvalue("withdraw-wallet",newvalue)
+    setvalue("balance",newbalance)
 
-    balance.innerText =currentbalance
- })
+})
+
+
